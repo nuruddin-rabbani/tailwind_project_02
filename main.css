@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .btn {
+        @apply px-[36px] py-[15px] border hover:border bg-[#F44335] hover:bg-transparent hover:text-black  text-white rounded-md;
+    }
+    .btn-solid {
+        @apply px-[36px] py-[15px]  bg-[#F44335] hover:bg-white  hover:text-black  text-white rounded-md;
+    }
+
+    .btn-transparent {
+        @apply px-[36px] py-[15px] border hover:bg-[#F44335] hover:text-white rounded-md;
+    }
+    
+    .btn-next {
+        @apply px-[36px] py-[15px] bg-white text-black hover:bg-[#F44335] hover:text-white rounded-md;
+    }
+    
+    .img {
+        @apply max-w-[100%] h-auto w-1/3;
+    }
+
+    
+}
