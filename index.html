@@ -11,16 +11,18 @@
 
 <body class="bg-[#FAFAFA] dark:bg-gray-700 dark:text-white">
     <!-- Header -->
-    <header class="px-4 py-4 bg-white border-b dark:border-b-0 dark:bg-gray-900">
+    <header class="px-4 py-4 bg-white border-b dark:border-b-0 dark:bg-gray-900 relative sticky w-full top-0">
         <nav class="container mx-auto flex justify-between items-center">
             <div>
                 <img class="dark:brightness-150" src="images/c4u full logo_2022 1 (2).png" alt="">
             </div>
-            <div class="flex gap-10 hidden">
-                <a class="block hover:scale-105 duration-200 hover:font-semibold" href="#">Home</a>
-                <a class="block hover:scale-105 duration-200 hover:font-semibold" href="#">About</a>
-                <a class="block hover:scale-105 duration-200 hover:font-semibold text-[#F44335]" href="#">Upskill</a>
-                <a class="block hover:scale-105 duration-200 hover:font-semibold" href="#">Contact Us</a>
+            <div id="main-menu"
+                class="absolute lg:static w-2/3 lg:w-auto h-screen lg:h-auto lg:flex lg:gap-8 lg:items-center bg-slate-200 dark:bg-gray-900 lg:bg-transparent top-16 right-0 text-start ps-6 lg:ps-0 py-6 lg:py-0 space-y-5 lg:space-y-0  text-black hidden lg:block dark:text-white">
+                <a class="block hover:scale-105 duration-200 hover:font-semibold" href="#home">Home</a>
+                <a class="block hover:scale-105 duration-200 hover:font-semibold" href="#about">About</a>
+                <a class="block hover:scale-105 duration-200 hover:font-semibold text-[#F44335]"
+                    href="#upskill">Upskill</a>
+                <a class="block hover:scale-105 duration-200 hover:font-semibold" href="#contact">Contact Us</a>
             </div>
             <div class="flex justify-between items-center space-x-5">
                 <a href="#" class="bg-[#F44335] px-4 py-2 text-white rounded-md font-semibold">Register Interest</a>
@@ -30,12 +32,18 @@
                         d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
                 </svg>
 
+                <button id="mobile-icon" class="block lg:hidden"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+                    </svg>
+                </button>
             </div>
         </nav>
     </header>
 
     <!-- Banner Section -->
-    <section class="px-4 py-12 w-full ">
+    <section id="home" class="px-4 py-12 w-full">
         <div class="container mx-auto grid grid-cols-12 gap-10 md:gap-0 justify-between md:items-center">
             <div class="col-span-12 md:col-span-6 order-2 md:order-1">
                 <h3 class="text-[18px] font-semibold dark:text-gray-300">Discover <span
@@ -110,7 +118,7 @@
     </section>
 
     <!-- What you will learn -->
-    <section class="md:py-20 ">
+    <section id="about" class="md:py-20">
         <div class="container mx-auto grid grid-cols-12 md:p-4 gap-6 md:gap-10 xl:gap-20">
 
             <!-- Left Column -->
@@ -234,7 +242,7 @@
     </section>
 
     <!-- There are 5 Courses in this Professional Certificate -->
-    <section class="relative pt-6 pb-16 md:py-24  px-8 bg-white dark:bg-gray-600">
+    <section id="upskill" class="relative pt-6 pb-16 md:py-24  px-8 bg-white dark:bg-gray-600">
         <div class="container mx-auto ">
             <div>
                 <h2 class="text-4xl md:text-[50px] font-bold leading-[60px] md:w-1/2">There are 5 Courses in this
@@ -828,7 +836,7 @@
     </section>
 
     <!-- Footer -->
-    <section class="pt-16 px-4 md:px-0">
+    <section id="contact" class="pt-16 px-4 md:px-0">
         <div class="container mx-auto grid grid-cols-12 justify-between pb-16 gap-8">
             <div class="col-span-4 md:col-span-4 space-y-2">
                 <img class="h-10 cursor-pointer" src="images/c4u full logo_2022 1 (2).png" alt="">
@@ -876,6 +884,13 @@
         const htmlTag = document.getElementById('htmlTag');
         document.getElementById('moonBtn').addEventListener('click', function () {
             htmlTag.classList.toggle('dark')
+        })
+
+        const mobileIcon = document.getElementById("mobile-icon");
+        const menu = document.getElementById('main-menu');
+
+        mobileIcon.addEventListener('click', function () {
+            menu.classList.toggle('hidden')
         })
     </script>
 </body>
